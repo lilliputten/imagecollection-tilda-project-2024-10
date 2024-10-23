@@ -1,0 +1,12 @@
+@import 'variables';
+
+// stylelint-disable selector-pseudo-class-no-unknown, property-no-unknown
+:export {
+  // Export variables (see re-exports in `cssVariables.ts`)
+  blockNavHeader: #{$blockNavHeader};
+
+  // Tresholds...
+  smallTreshold: #{$smallTreshold};
+  mobileTreshold: #{$mobileTreshold};
+  wideTreshold: #{$wideTreshold};
+}

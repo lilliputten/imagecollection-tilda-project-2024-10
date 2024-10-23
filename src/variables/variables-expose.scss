@@ -1,0 +1,25 @@
+@use 'sass:color';
+
+@use 'variables';
+
+@function rgbComponents($color) {
+  @return color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb)
+    color.channel($color, 'blue', $space: rgb);
+}
+
+:root {
+  --primaryColor: #{variables.$primaryColor};
+  --primaryRBG: #{rgbComponents(variables.$primaryColor)};
+
+  --defaultFont: #{variables.$defaultFont};
+  --defaultFontSize: #{variables.$defaultFontSize};
+
+  --navbarHeight: #{variables.$navbarHeight};
+  --topMenuHeight: #{variables.$topMenuHeight};
+
+  --socialIconSize: #{variables.$socialIconSize};
+
+  --transitionTimeMs: #{variables.$transitionTimeMs};
+  --animationTimeMs: #{variables.$animationTimeMs};
+  --disappearTimeMs: #{variables.$disappearTimeMs};
+}

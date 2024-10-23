@@ -1,0 +1,107 @@
+@mixin basicActiveLink {
+  button,
+  a {
+    transition: all var(--transitionTimeMs);
+    &:hover {
+      opacity: 0.75;
+    }
+  }
+}
+
+@mixin activeLink {
+  @include basicActiveLink;
+  button,
+  a {
+    &:hover {
+      text-decoration: underline !important;
+    }
+  }
+}
+
+@mixin WithVisualColumn {
+  .t195__imgsection {
+    img {
+      border-radius: 20px;
+      border: 3px solid var(--themeRedColor);
+      padding: 0;
+    }
+  }
+  @media (width <= $mobileTreshold) {
+    .t-container {
+      display: flex;
+      flex-direction: column;
+    }
+    .t-col {
+      order: 2;
+    }
+    .t195__imgsection {
+      order: 1;
+    }
+  }
+}
+
+@mixin SectionTitle {
+  font-size: 24px;
+  font-weight: 500;
+  color: var(--themeMoodLight50Color);
+  border-bottom: 2px solid rgba(var(--themeMoodLight50RBG) / 50%);
+  text-transform: uppercase;
+  text-align: left;
+  padding-bottom: 0.25em;
+  margin-bottom: 0.75em;
+  max-width: none;
+}
+@mixin SectionDescr {
+  text-align: left;
+  max-width: none;
+}
+
+@mixin BlockWithTitle {
+  .t-title {
+    @include SectionTitle;
+  }
+  .t-descr {
+    @include SectionDescr;
+  }
+}
+@mixin ColumnsBlock {
+  .t-col {
+    break-inside: avoid-column;
+    margin-top: 30px !important;
+  }
+}
+@mixin ColumnsBlock4 {
+  @include ColumnsBlock;
+  @media (width > $mobileTreshold) {
+    .t510__container {
+      columns: 4;
+      display: block;
+    }
+  }
+}
+@mixin ColumnsBlock3 {
+  @include ColumnsBlock;
+  @media (width > $mobileTreshold) {
+    .t510__container {
+      columns: 3;
+      display: block;
+    }
+  }
+}
+@mixin ColumnsBlock2 {
+  @include ColumnsBlock;
+  @media (width > $mobileTreshold) {
+    .t510__container {
+      columns: 2;
+      display: block;
+    }
+  }
+}
+@mixin OpaqueCircleItems {
+  // @include ColumnsBlock2;
+  .t510__circle {
+    background-color: var(--themeRedColor);
+    color: #fff !important;
+    border-color: var(--themeRedColor) !important;
+  }
+}
