@@ -1,8 +1,8 @@
 // @ts-check
 
 /** @module Webpack config
- *  @since 2024.10.07, 00:00
- *  @changed 2024.10.07, 15:15
+ *  @since 2024.10.23, 17:57
+ *  @changed 2024.10.23, 17:57
  */
 
 const webpack = require('webpack');
@@ -105,25 +105,6 @@ module.exports = {
         test: /\.(png|jpe?g|gif|svg|eot|ttf|woff|woff2)$/i,
         // More information here https://webpack.js.org/guides/asset-modules/
         type: 'asset/inline',
-        // use: [
-        //   {
-        //     loader: 'url-loader',
-        //     options: {
-        //       limit: false,
-        //     },
-        //   },
-        // ],
-
-        // laoder: 'url',
-        /* generator: {
-         *   dataUrl: (content) => {
-         *     content = content.toString();
-         *     console.log('XXX', content);
-         *     process.exit(99);
-         *     return btoa(content); // svgToMiniDataURI(content);
-         *   },
-         * },
-         */
       },
     ],
   },

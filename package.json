@@ -79,7 +79,7 @@
     "check-all": "echo --Run all pre-commit check-ups-- && npm-run-all prettier stylelint lint type-check && echo --All check-ups are passed--",
     "build-publish": "echo --Build and publish-- && npm-run-all build publish",
     "serve": "serve build",
-    "serve-dev": "serve build-dev",
+    "serve-dev": "serve --cors build-dev",
     "publish": "echo --Publish build /posix commands and uplevel utils branch are used/-- && sh ../utils/scripts/publish.sh",
     "build": "echo --Create all assets /webpack/-- && webpack",
     "build-dev": "echo --Create all assets in debug mode /webpack/-- && cross-env DEV=true webpack",

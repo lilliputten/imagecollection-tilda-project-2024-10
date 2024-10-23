@@ -1,6 +1,6 @@
 <!--
 @desc Custom styles and code to adjust page
-@changed 2024.10.18, 15:26
+@changed 2024.10.23, 19:13
 -->
 
 <link
@@ -11,5 +11,25 @@
   rel="stylesheet"
   href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css"
 />
-
 <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+
+<script type="text/javascript">
+  function devScriptError(arg) {
+    // DEBUG: Show a dev mode warning (if the script hasn't been loaded)
+    requestAnimationFrame(function delayed() {
+      const body = document.body;
+      const divNode = document.createElement('div');
+      divNode.style.backgroundColor = 'red';
+      divNode.style.color = 'white';
+      divNode.style.position = 'fixed';
+      divNode.style.zIndex = '99999999';
+      divNode.style.top = '0';
+      divNode.style.width = '100%';
+      divNode.style.padding = '5px 10px';
+      divNode.style.fontFamily = 'sans-serif';
+      divNode.style.textAlign = 'center';
+      divNode.innerText = 'Scrips has not been loaded. Probaly, the page is served under the dev mode.';
+      body.prepend(divNode);
+    });
+  }
+</script>
