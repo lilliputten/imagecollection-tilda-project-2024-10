@@ -1,0 +1,2 @@
+(()=>{"use strict";console.log.call(console,"imagecollection-tilda-project-2024-10 v.0.0.12 / 2024.10.23 14:42 +0300"),window.addEventListener("load",(function(){}))})();
+//# sourceMappingURL=scripts.js.map
