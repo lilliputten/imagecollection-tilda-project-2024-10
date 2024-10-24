@@ -1,0 +1,43 @@
+.CarouselWrapper {
+  // border: 2px dashed pink; // DEBUG
+  position: relative;
+  .CarouselRightArrow,
+  .CarouselLeftArrow {
+    // Position...
+    z-index: 2;
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    // Geometry...
+    width: 40px;
+    height: 40px;
+    border-radius: 100px;
+    background-color: rgba(0, 0, 0, 0.8);
+    margin-top: 0px;
+    cursor: pointer;
+    // TODO: Adapt size for smallTreshold
+    // Background...
+    background-image: url('../assets/Carousel/right-arrow.svg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: auto 18px;
+    // Animation...
+    transition: all var(--transitionTimeMs);
+    opacity: 0.3;
+    &:hover {
+      // background-color: rgba(0, 0, 0, 0.4);
+      opacity: 0.6;
+    }
+  }
+  // Specific arrow settings...
+  .CarouselLeftArrow {
+    transform: translateY(-50%) scaleX(-1);
+    left: 20px;
+  }
+  .CarouselRightArrow {
+    right: 20px;
+  }
+}
+.Carousel {
+  // border: 2px dashed blue; // DEBUG
+}

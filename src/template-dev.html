@@ -9,6 +9,7 @@
     requestAnimationFrame(function delayed() {
       const body = document.body;
       const divNode = document.createElement('div');
+      divNode.classList.add('devScriptError');
       divNode.style.backgroundColor = 'red';
       divNode.style.color = 'white';
       divNode.style.position = 'fixed';
@@ -19,7 +20,7 @@
       divNode.style.fontFamily = 'sans-serif';
       divNode.style.textAlign = 'center';
       divNode.innerText =
-        'Scrips has not been loaded. Probaly, the page is served under the dev mode.';
+        'Scrips has not been loaded. The page is probably being maintained in development mode.';
       body.prepend(divNode);
     });
   }

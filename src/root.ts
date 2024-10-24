@@ -17,6 +17,7 @@ import './misc-styles';
  */
 
 import { initTopMenu } from './TopMenu';
+import { initFeaturesGal } from './FeaturesGal';
 
 /** Print app info */
 function printAppInfo() {
@@ -32,6 +33,7 @@ function printAppInfo() {
 function initPage() {
   // Start subcomponents...
   initTopMenu();
+  initFeaturesGal();
 }
 
 printAppInfo();
