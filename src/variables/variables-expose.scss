@@ -1,6 +1,6 @@
 @use 'sass:color';
 
-@use 'variables';
+@use 'variables' as *;
 
 @function rgbComponents($color) {
   @return color.channel($color, 'red', $space: rgb) color.channel($color, 'green', $space: rgb)
@@ -8,18 +8,21 @@
 }
 
 :root {
-  --primaryColor: #{variables.$primaryColor};
-  --primaryRBG: #{rgbComponents(variables.$primaryColor)};
+  --primaryColor: #{$primaryColor};
+  --primaryRBG: #{rgbComponents($primaryColor)};
 
-  --defaultFont: #{variables.$defaultFont};
-  --defaultFontSize: #{variables.$defaultFontSize};
+  --darkTextColor: #{$darkTextColor};
+  --moodGrayColor: #{$moodGrayColor};
 
-  --navbarHeight: #{variables.$navbarHeight};
-  --topMenuHeight: #{variables.$topMenuHeight};
+  --defaultFont: #{$defaultFont};
+  --defaultFontSize: #{$defaultFontSize};
 
-  --socialIconSize: #{variables.$socialIconSize};
+  --navbarHeight: #{$navbarHeight};
+  --topMenuHeight: #{$topMenuHeight};
 
-  --transitionTimeMs: #{variables.$transitionTimeMs};
-  --animationTimeMs: #{variables.$animationTimeMs};
-  --disappearTimeMs: #{variables.$disappearTimeMs};
+  --socialIconSize: #{$socialIconSize};
+
+  --transitionTimeMs: #{$transitionTimeMs};
+  --animationTimeMs: #{$animationTimeMs};
+  --disappearTimeMs: #{$disappearTimeMs};
 }

@@ -1,0 +1,29 @@
+@use '../variables' as *;
+
+#allrecords .uc-NavHeader {
+  @include activeLink;
+  .t228__imgwrapper {
+    margin-bottom: 5px;
+  }
+  .t228__maincontainer {
+    border-bottom: 2px solid $NavHeaderBorderColor;
+    background: rgba(255 255 255 / 80%);
+    height: $NavHeaderHeight;
+  }
+  .tmenu-mobile__container {
+    border-bottom: 2px solid $NavHeaderBorderColor;
+  }
+  @media (width >= $wideTreshold) {
+    &,
+    .t228 {
+      height: $NavHeaderTotalHeight;
+      padding: 0 !important;
+    }
+    .t228__maincontainer {
+      border-radius: 10px;
+      border: 2px solid $NavHeaderBorderColor;
+      margin-top: $NavHeaderVMargin;
+      margin-bottom: $NavHeaderVMargin;
+    }
+  }
+}
