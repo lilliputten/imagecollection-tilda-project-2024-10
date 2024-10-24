@@ -19,7 +19,8 @@ const useInlineScripts = !useLocalServedScripts;
 /** Create source maps for production mode (not dev) */
 const generateSourcesForProduction = true;
 
-const templateHeaderFile = 'src/template-header.html';
+const templateFile = 'src/template.html';
+const templateDevFile = 'src/template-dev.html';
 
 const appInfoFile = 'src/app-info.json';
 const appInfoContent = fs.readFileSync(path.resolve(__dirname, appInfoFile), {
@@ -83,7 +84,8 @@ module.exports = {
   useLocalServedScripts,
   useInlineScripts,
 
-  templateHeaderFile,
+  templateFile,
+  templateDevFile,
   generateSourcesForProduction,
 
   appInfoFile,

@@ -18,5 +18,7 @@
 /types
 /utils
 
+/src/app-info.scss
+
 package-lock.*
 **/*_

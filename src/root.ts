@@ -16,7 +16,7 @@ import './misc-styles';
  * debugger;
  */
 
-// import { initNavHeader } from './NavHeader';
+import { initTopMenu } from './TopMenu';
 
 /** Print app info */
 function printAppInfo() {
@@ -31,7 +31,7 @@ function printAppInfo() {
 /** Init all the page */
 function initPage() {
   // Start subcomponents...
-  // initNavHeader();
+  initTopMenu();
 }
 
 printAppInfo();

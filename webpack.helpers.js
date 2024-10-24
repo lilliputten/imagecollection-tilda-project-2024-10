@@ -8,6 +8,8 @@
 // eslint-disable-next-line no-unused-vars
 const webpack = require('webpack'); // Used only for typings
 
+const fs = require('fs');
+
 const {
   scriptsAssetFile,
   stylesAssetFile,
@@ -119,6 +121,12 @@ function getCompilationScriptsContent(compilation, opts = {}) {
   ].join('\n');
 }
 
+/** @param {string} fileName */
+function readContent(fileName) {
+  return fs.readFileSync(fileName, { encoding: 'utf8' }).trim();
+}
+
 module.exports = {
   getCompilationScriptsContent,
+  readContent,
 };

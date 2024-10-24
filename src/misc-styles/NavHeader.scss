@@ -2,23 +2,42 @@
 
 #allrecords .uc-NavHeader {
   @include activeLink;
+  .tmenu-mobile__burgerlogo,
   .t228__imgwrapper {
-    margin-bottom: 5px;
+    margin-bottom: 8px;
   }
   .t228__maincontainer {
     border-bottom: 2px solid $NavHeaderBorderColor;
-    background: rgba(255 255 255 / 80%);
     height: $NavHeaderHeight;
+  }
+  .tmenu-mobile {
+    background-color: transparent;
   }
   .tmenu-mobile__container {
     border-bottom: 2px solid $NavHeaderBorderColor;
   }
-  @media (width >= $wideTreshold) {
-    &,
-    .t228 {
-      height: $NavHeaderTotalHeight;
-      padding: 0 !important;
+  // Dynamic (scroll-based) background...
+  .tmenu-mobile__container,
+  .t228__maincontainer {
+    transition: background 2s; // var(--disappearTimeMs);
+    background-color: transparent;
+  }
+  &.scrolled {
+    .tmenu-mobile__container,
+    .t228__maincontainer {
+      background-color: rgba(255 255 255 / 80%);
     }
+  }
+  // Disable default paddings...
+  &,
+  .t228 {
+    padding: 0 !important;
+    /* // NOTE: Position it topmost if we have a hero section below
+     * height: $NavHeaderTotalHeight;
+     */
+  }
+  // Wide screen: 'floated' menu panel
+  @media (width > $wideTreshold) {
     .t228__maincontainer {
       border-radius: 10px;
       border: 2px solid $NavHeaderBorderColor;
