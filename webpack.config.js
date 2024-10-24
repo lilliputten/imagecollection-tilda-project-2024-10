@@ -2,18 +2,18 @@
 
 /** @module Webpack config
  *  @since 2024.10.23, 17:57
- *  @changed 2024.10.23, 17:57
+ *  @changed 2024.10.24, 17:35
  */
 
 const webpack = require('webpack');
 
-const fs = require('fs');
+// const fs = require('fs');
 const path = require('path');
 const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const { getCompilationScriptsContent } = require('./webpack.helpers');
+const { getCompilationScriptsContent, readContent } = require('./webpack.helpers');
 const {
   isDev,
   isDebug,
@@ -21,10 +21,13 @@ const {
   useLocalServedScripts,
   appVersionHash,
   outPath,
-  templateHeaderFile,
+  templateFile,
+  templateDevFile,
   devtool,
   minimizeAssets,
 } = require('./webpack.params');
+
+const NL = '\n';
 
 module.exports = {
   mode: 'production',
@@ -126,11 +129,6 @@ module.exports = {
       inject: false,
       minify: false,
       templateContent: (args) => {
-        const headerContent = fs
-          .readFileSync(path.resolve(__dirname, templateHeaderFile), {
-            encoding: 'utf8',
-          })
-          .trim();
         /** @type {webpack.Compilation} */
         const compilation = args.compilation;
         // Get scripts chunk content...
@@ -141,13 +139,13 @@ module.exports = {
         });
         return [
           // Combine template...
-          '<!-- ' + appVersionHash + ' -->',
-          '',
-          headerContent,
-          '',
-          scriptsContent,
-          '',
-        ].join('\n');
+          '<!-- ' + appVersionHash + ' -->' + NL,
+          readContent(path.resolve(__dirname, templateFile)) + NL,
+          isDev && readContent(path.resolve(__dirname, templateDevFile)) + NL,
+          scriptsContent + NL,
+        ]
+          .filter(Boolean)
+          .join('\n');
       },
     }),
   ],
