@@ -8,6 +8,14 @@ import './variables/variables-expose.scss';
 
 import './misc-styles';
 
+/* // DEBUG: Example of usage of css exprted variables
+ * import {
+ *   wideTresholdPx, // 1200
+ * } from './variables';
+ * console.log('XXX', wideTresholdPx);
+ * debugger;
+ */
+
 // import { initNavHeader } from './NavHeader';
 
 /** Print app info */
