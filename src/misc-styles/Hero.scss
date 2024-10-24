@@ -1,0 +1,8 @@
+@use '../variables' as *;
+
+#allrecords .uc-Hero {
+  @include activeLink;
+  .t-cover {
+    background-color: #ddd;
+  }
+}
