@@ -1,11 +1,11 @@
 {
-  "appVersionHash": "imagecollection-tilda-project-2024-10 v.0.0.12 / 2024.10.23 14:42 +0300",
+  "appVersionHash": "imagecollection-tilda-project-2024-10 v.0.0.3 / 2024.10.25 23:27 +0300",
   "projectName": "imagecollection-tilda-project-2024-10",
-  "timestamp": "2024.10.23 14:42 +0300",
-  "timetag": "241023-1442",
-  "version": "0.0.12",
-  "currentTimeStr": "2024.10.23 14:42 +0300",
-  "currentTimeTag": "241023-1442",
-  "gitCommitHash": "5179690",
-  "gitBranch": "3-add-hero-visual-and-second-menu-blocks"
+  "timestamp": "2024.10.25 23:27 +0300",
+  "timetag": "241025-2327",
+  "version": "0.0.3",
+  "currentTimeStr": "2024.10.25 23:27 +0300",
+  "currentTimeTag": "241025-2327",
+  "gitCommitHash": "f696f31",
+  "gitBranch": "5-features-gallery"
 }
