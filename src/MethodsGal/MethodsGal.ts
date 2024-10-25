@@ -56,10 +56,6 @@ export function initMethodsGal() {
   leftArrow.classList.add('CarouselLeftArrow');
   leftArrow.id = 'left';
   carouselWrapper.append(leftArrow);
-  /* // Initialize native owl-nav...
-   * const owlNav = owlCarousel.querySelector('.owl-nav');
-   * carouselWrapper.append(owlNav);
-   */
   // Initialize arrows events...
   const useUnderElements = false;
   const getUnderlayingItem = (target: HTMLElement, activeItem: HTMLElement) => {
@@ -109,21 +105,13 @@ export function initMethodsGal() {
   const owlDot = owlCarousel.querySelector('.owl-dots');
   const updateCarouselGeometry = () => {
     const imgs = owlCarousel.querySelectorAll('.t-bgimg');
-    // const widths: number[] = []
     imgs.forEach((node: HTMLElement) => {
       const rects = node.getClientRects()[0];
       const width = rects.width; // node.offsetWidth;
-      // widths.push(width);
       node.style.height = width + 'px';
     });
     const isDisabled = owlDot.classList.contains('disabled');
     const arrowDisabled = leftArrow.classList.contains('disabled');
-    /* console.log('[updateCarouselGeometry]', {
-     *   widths,
-     *   isDisabled,
-     *   arrowDisabled,
-     * });
-     */
     if (isDisabled !== arrowDisabled) {
       leftArrow.classList.toggle('disabled', isDisabled);
       rightArrow.classList.toggle('disabled', isDisabled);

@@ -20,6 +20,7 @@ import { initTopMenu } from './TopMenu';
 import { initFeaturesGal } from './FeaturesGal';
 import { initCatalogGal } from './CatalogGal';
 import { initMethodsGal } from './MethodsGal';
+import { initCaseTiles } from './CaseTiles';
 
 /** Print app info */
 function printAppInfo() {
@@ -38,6 +39,7 @@ function initPage() {
   initFeaturesGal();
   initCatalogGal();
   initMethodsGal();
+  initCaseTiles();
 }
 
 printAppInfo();
