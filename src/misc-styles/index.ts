@@ -1,6 +1,12 @@
 import './Carousel.scss';
 import './DevWarning.scss';
+import './FooterContacts.scss';
+import './FooterCredits.scss';
+import './FooterLogo.scss';
+import './FooterSchedule.scss';
+import './FooterSocials.scss';
 import './Hero.scss';
 import './NavHeader.scss';
 import './Root.scss';
 import './SectionTitle.scss';
+import './WorkItems.scss';

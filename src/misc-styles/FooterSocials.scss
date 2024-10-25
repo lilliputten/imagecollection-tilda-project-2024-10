@@ -1,0 +1,8 @@
+@use '../variables' as *;
+
+#allrecords .uc-FooterSocials {
+  @include activeLink;
+  .t1058__row {
+    border-bottom: 1px solid #fff;
+  }
+}

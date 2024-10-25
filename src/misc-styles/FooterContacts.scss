@@ -1,0 +1,16 @@
+@use '../variables' as *;
+
+#allrecords .uc-FooterContacts {
+  // @include activeLink;
+  .t490__wrappercenter {
+    * {
+      transition: all var(--transitionTimeMs);
+    }
+    &:hover {
+      * {
+        text-decoration: underline !important;
+        opacity: 0.75;
+      }
+    }
+  }
+}

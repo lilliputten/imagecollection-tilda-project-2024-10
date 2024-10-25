@@ -21,12 +21,14 @@ import { initFeaturesGal } from './FeaturesGal';
 import { initCatalogGal } from './CatalogGal';
 import { initMethodsGal } from './MethodsGal';
 import { initCaseTiles } from './CaseTiles';
+import { isDev } from './core/constants/isDev';
+import { isDebug } from './core/constants/isDebug';
 
 /** Print app info */
 function printAppInfo() {
   const appVersion = process.env.APP_VERSION;
-  const isDebug = process.env.DEBUG;
-  const isDev = process.env.DEV;
+  // const isDebug = process.env.DEBUG;
+  // const isDev = process.env.DEV;
   // eslint-disable-next-line no-console
   const consoleMethod = isDebug || isDev ? console.warn : console.log;
   consoleMethod.call(console, appVersion);

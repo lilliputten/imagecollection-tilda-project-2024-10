@@ -1,7 +1,6 @@
 @use '../variables' as *;
 
 #allrecords .uc-CaseTiles {
-  border: 3px dashed green;
   .t-bgimg {
     position: relative;
     overflow: hidden;
@@ -19,6 +18,10 @@
     text-transform: uppercase;
     font-size: 40px;
     padding: 20px;
+  }
+  @media (width <= $smallTreshold) {
+    // Compensate missing bottom padding
+    margin-bottom: 40px;
   }
   @media (width > $smallTreshold) {
     $normalHeight: 340px;
@@ -48,10 +51,21 @@
       font-size: 20px;
       padding: 15px;
     }
+    @media (width > $smallTreshold) {
+      $mediumHeight: 260px;
+      .t662__row {
+        display: flex;
+        // flex-direction: column;
+        gap: 20px;
+      }
+      .t662__row {
+        height: $mediumHeight;
+      }
+    }
   }
   // @media (width <= $smallTreshold) {
   @media (width <= 500px) {
-    $smaillHeight: 200px;
+    $smaillHeight: 150px;
     .t662__row {
       display: flex;
       flex-direction: column;

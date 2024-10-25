@@ -60,10 +60,6 @@
         display: block;
         width: fit-content;
         text-decoration: none;
-        // background-color: #f1f2f4;
-        // border-radius: 20px;
-        // color: #000;
-        // padding: 4px 8px;
         margin-bottom: 15px;
       }
     }
@@ -72,6 +68,13 @@
       font-size: 24px;
       u {
         font-size: 36px;
+      }
+      // $wideTreshold: 1200px;
+      @media (width <= $wideTreshold) {
+        font-size: 20px;
+        u {
+          font-size: 30px;
+        }
       }
     }
     .t-descr {

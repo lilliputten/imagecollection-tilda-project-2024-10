@@ -1,3 +1,5 @@
+import { isDev } from './isDev';
+
 export const defaultCarouselOptions: OwlCarousel.Options = {
   // @see https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
   loop: true,
@@ -10,5 +12,5 @@ export const defaultCarouselOptions: OwlCarousel.Options = {
   // items: 1,
 };
 
-export const defaultCarouselAutoplay = false;
+export const defaultCarouselAutoplay = !isDev;
 export const defaultCarouselAutoplayTimeout = 3000;
