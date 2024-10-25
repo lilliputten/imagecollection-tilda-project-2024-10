@@ -1,6 +1,6 @@
 /** @module Scripts root module
  *  @since 2024.10.23, 16:41
- *  @changed 2024.10.23, 16:41
+ *  @changed 2024.10.25, 20:45
  */
 
 import './app-info.scss';
@@ -19,6 +19,7 @@ import './misc-styles';
 import { initTopMenu } from './TopMenu';
 import { initFeaturesGal } from './FeaturesGal';
 import { initCatalogGal } from './CatalogGal';
+import { initMethodsGal } from './MethodsGal';
 
 /** Print app info */
 function printAppInfo() {
@@ -36,6 +37,7 @@ function initPage() {
   initTopMenu();
   initFeaturesGal();
   initCatalogGal();
+  initMethodsGal();
 }
 
 printAppInfo();
