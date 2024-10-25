@@ -3,6 +3,9 @@
 #allrecords .uc-FeaturesGal {
   // border: 2px dashed green; // DEBUG
   background-color: transparent !important;
+  .CarouselWrapper {
+    overflow: hidden;
+  }
   .Carousel {
     .owl-stage-outer {
       overflow: visible;

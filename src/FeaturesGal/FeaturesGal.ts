@@ -17,18 +17,13 @@ export function initFeaturesGal() {
   owlCarousel.classList.toggle('owl-carousel', true);
   /** Do we need autoplay? */
   const doAutoplay = false;
-  /** Owl carousel object */
-  const owl = $(owlCarousel).owlCarousel({
+  const owlOptions: OwlCarousel.Options = {
+    // @see https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
     loop: true,
     center: true,
     dots: true,
     nav: false,
-    margin: 5,
-    // Autoplay...
-    // @see https://owlcarousel2.github.io/OwlCarousel2/demos/autoplay.html
-    autoplay: doAutoplay,
-    autoplayTimeout: 3000,
-    autoplayHoverPause: true,
+    margin: 0,
     smartSpeed: 2000,
     // Responsiveness...
     items: 1,
@@ -38,7 +33,16 @@ export function initFeaturesGal() {
     //   640: { items: 3 },
     //   [wideTresholdPx]: { items: 5 },
     // },
-  });
+  };
+  if (doAutoplay) {
+    // Autoplay...
+    // @see https://owlcarousel2.github.io/OwlCarousel2/demos/autoplay.html
+    owlOptions.autoplay = doAutoplay;
+    owlOptions.autoplayTimeout = 3000;
+    owlOptions.autoplayHoverPause = true;
+  }
+  /** Owl carousel object */
+  const owl = $(owlCarousel).owlCarousel(owlOptions);
   // Append arrows...
   const rightArrow = document.createElement('div');
   rightArrow.classList.add('CarouselRightArrow');
@@ -62,11 +66,11 @@ export function initFeaturesGal() {
     const underItem = target.underItem as HTMLElement;
     if (underItem) {
       underItem.classList.toggle('under', false);
+      // @ts-ignore: For internal use only
+      target.underItem = undefined;
     }
     if (doAutoplay) {
       owl.trigger('play.owl.autoplay');
-      // @ts-ignore: For internal use only
-      target.underItem = undefined;
     }
   };
   const arrowOver = (ev: MouseEvent) => {
