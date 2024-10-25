@@ -8,7 +8,7 @@ import './variables/variables-expose.scss';
 
 import './misc-styles';
 
-/* // DEBUG: Example of usage of css exprted variables
+/* // DEBUG: Example of usage of css exported variables
  * import {
  *   wideTresholdPx, // 1200
  * } from './variables';
@@ -18,6 +18,7 @@ import './misc-styles';
 
 import { initTopMenu } from './TopMenu';
 import { initFeaturesGal } from './FeaturesGal';
+import { initCatalogGal } from './CatalogGal';
 
 /** Print app info */
 function printAppInfo() {
@@ -34,6 +35,7 @@ function initPage() {
   // Start subcomponents...
   initTopMenu();
   initFeaturesGal();
+  initCatalogGal();
 }
 
 printAppInfo();

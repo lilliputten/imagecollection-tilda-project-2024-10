@@ -3,11 +3,16 @@ import {
   defaultCarouselAutoplayTimeout,
   defaultCarouselAutoplay,
 } from '../core/constants/defaultCarouselOptions';
+import {
+  smallTresholdPx, // 660
+  mobileTresholdPx, // 960
+  wideTresholdPx, // 1200
+} from '../variables';
 
-import './FeaturesGal.styles.scss';
+import './CatalogGal.styles.scss';
 
-export function initFeaturesGal() {
-  const rootNode = document.querySelector('.uc-FeaturesGal');
+export function initCatalogGal() {
+  const rootNode = document.querySelector('.uc-CatalogGal');
   if (!rootNode) {
     return;
   }
@@ -23,9 +28,15 @@ export function initFeaturesGal() {
   const owlOptions: OwlCarousel.Options = {
     // @see https://owlcarousel2.github.io/OwlCarousel2/docs/api-options.html
     ...defaultCarouselOptions,
-    margin: 0,
+    margin: 40,
     // Responsiveness...
     items: 1,
+    responsive: {
+      // 0: { items: 1 },
+      [smallTresholdPx]: { items: 2 },
+      [mobileTresholdPx]: { items: 3 },
+      [wideTresholdPx]: { items: 3 },
+    },
   };
   if (doAutoplay) {
     // Autoplay...
@@ -46,6 +57,7 @@ export function initFeaturesGal() {
   leftArrow.id = 'left';
   carouselWrapper.append(leftArrow);
   // Initialize arrows events...
+  const useUnderElements = false;
   const getUnderlayingItem = (target: HTMLElement, activeItem: HTMLElement) => {
     const { id } = target;
     return (
@@ -55,12 +67,14 @@ export function initFeaturesGal() {
   };
   const arrowOut = (ev: MouseEvent) => {
     const target = ev.target as HTMLElement;
-    // @ts-ignore: For internal use only
-    const underItem = target.underItem as HTMLElement;
-    if (underItem) {
-      underItem.classList.toggle('under', false);
+    if (useUnderElements) {
       // @ts-ignore: For internal use only
-      target.underItem = undefined;
+      const underItem = target.underItem as HTMLElement;
+      if (underItem) {
+        underItem.classList.toggle('under', false);
+        // @ts-ignore: For internal use only
+        target.underItem = undefined;
+      }
     }
     if (doAutoplay) {
       owl.trigger('play.owl.autoplay');
@@ -69,11 +83,13 @@ export function initFeaturesGal() {
   const arrowOver = (ev: MouseEvent) => {
     const target = ev.target as HTMLElement;
     const activeItem = owlCarousel.querySelector('.owl-item.active') as HTMLElement;
-    const underItem = getUnderlayingItem(target, activeItem);
-    // @ts-ignore: For internal use only
-    target.underItem = underItem;
-    if (underItem) {
-      underItem.classList.toggle('under', true);
+    if (useUnderElements) {
+      const underItem = getUnderlayingItem(target, activeItem);
+      // @ts-ignore: For internal use only
+      target.underItem = underItem;
+      if (underItem) {
+        underItem.classList.toggle('under', true);
+      }
     }
     if (doAutoplay) {
       owl.trigger('stop.owl.autoplay');
@@ -88,6 +104,12 @@ export function initFeaturesGal() {
   // Update image sizes (make them 1:1 ratio)...
   const owlDot = owlCarousel.querySelector('.owl-dots');
   const updateCarouselGeometry = () => {
+    const imgs = owlCarousel.querySelectorAll('.t-bgimg');
+    imgs.forEach((node: HTMLElement) => {
+      const rects = node.getClientRects()[0];
+      const width = rects.width; // node.offsetWidth;
+      node.style.height = width + 'px';
+    });
     const isDisabled = owlDot.classList.contains('disabled');
     const arrowDisabled = leftArrow.classList.contains('disabled');
     if (isDisabled !== arrowDisabled) {

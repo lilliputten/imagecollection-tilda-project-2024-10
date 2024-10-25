@@ -1,0 +1,18 @@
+@use '../variables' as *;
+
+#allrecords .uc-SectionTitle {
+  @include activeLink;
+  border-top: 2px solid var(--primaryColor);
+  .t-title {
+    font-size: 68px;
+    @media (width <= $mobileTreshold) {
+      font-size: 44px;
+    }
+  }
+  .t-menu__link-item {
+    display: inline-block;
+    border-radius: 10px;
+    border: 2px solid var(--primaryColor);
+    padding: 6px 20px;
+  }
+}

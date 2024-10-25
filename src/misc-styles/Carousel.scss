@@ -1,8 +1,12 @@
+@use '../variables' as *;
+
 .CarouselWrapper {
-  // border: 2px dashed pink; // DEBUG
   position: relative;
   .CarouselRightArrow,
   .CarouselLeftArrow {
+    &.disabled {
+      display: none;
+    }
     // Position...
     z-index: 2;
     position: absolute;
@@ -39,5 +43,6 @@
   }
 }
 .Carousel {
+  @include activeLink;
   // border: 2px dashed blue; // DEBUG
 }
