@@ -1,8 +1,8 @@
 {
   "name": "imagecollection-tilda-project-2024-10",
-  "version": "0.0.3",
-  "timetag": "241025-2327",
-  "timestamp": "2024.10.25 23:27 +0300",
+  "version": "0.0.4",
+  "timetag": "241026-0114",
+  "timestamp": "2024.10.26 01:14 +0300",
   "changed": "2024.10.23, 16:18",
   "description": "Image Collection assets for include in tilda site",
   "main": "index.html",
