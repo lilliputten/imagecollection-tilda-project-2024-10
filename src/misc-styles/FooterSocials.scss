@@ -4,5 +4,9 @@
   @include activeLink;
   .t1058__row {
     border-bottom: 1px solid #fff;
+    // Don't collapse block on narrow screens
+    flex: 1;
+    display: flex;
+    flex-direction: row;
   }
 }

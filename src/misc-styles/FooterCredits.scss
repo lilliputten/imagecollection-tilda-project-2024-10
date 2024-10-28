@@ -2,4 +2,16 @@
 
 #allrecords .uc-FooterCredits {
   @include activeLink;
+  .t454__maincontainer {
+    @media (width <= $wideTreshold) {
+      max-width: $mobileTreshold; // 960px;
+      padding: 0;
+    }
+    @media (width <= $mobileTreshold) {
+      padding: 20px 0;
+    }
+  }
+  .t454__logowrapper {
+    display: none;
+  }
 }
