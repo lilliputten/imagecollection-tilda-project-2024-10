@@ -7,6 +7,7 @@ import './FooterSchedule.scss';
 import './FooterSocials.scss';
 import './Hero.scss';
 import './NavHeader.scss';
+import './PopupForm.scss';
 import './Root.scss';
 import './SectionTitle.scss';
 import './WorkItems.scss';
