@@ -1,0 +1,120 @@
+@use '../variables' as *;
+
+#allrecords .uc-CatalogGal {
+  background-color: transparent !important;
+  .CarouselWrapper {
+    padding: 0 20px;
+    // overflow: hidden;
+  }
+  .Carousel {
+    .owl-stage {
+      display: flex;
+      align-items: stretch;
+    }
+    .owl-item {
+      display: flex;
+      align-items: stretch;
+      justify-content: space-evenly;
+      // max-width: 300px; // To limit the width: but the positioning will be uncentered then.
+    }
+    .t-item {
+      overflow: hidden;
+      margin: 0 !important;
+      padding: 0;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 30px;
+      max-width: none;
+      position: relative;
+    }
+    // Text block
+    .t508__textwrapper {
+      border-radius: 10px;
+      background-color: var(--primaryColor);
+      padding: 10px 0;
+      display: flex;
+      flex-direction: column;
+      > * {
+        margin: 5px 20px;
+      }
+    }
+    .t-cell {
+      display: block;
+      // Image cell...
+      &:first-child {
+        width: 100%;
+      }
+      // Image block
+      .t-bgimg {
+        border-radius: 10px;
+        width: 100% !important;
+        max-width: none;
+        max-height: none;
+      }
+    }
+    // Texts...
+    .t-name {
+      position: relative;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 10px;
+      // Floating element...
+      @media (width > $wideTreshold) {
+        padding-right: 30%;
+      }
+      u {
+        display: block;
+        width: fit-content;
+        text-decoration: none;
+        font-family: var(--defaultFont);
+        background-color: #f1f2f4;
+        border-radius: 20px;
+        color: #000;
+        padding: 4px 8px;
+        margin-bottom: 15px;
+        @media (width > $wideTreshold) {
+          position: absolute;
+          right: 0;
+          top: 4px;
+        }
+      }
+    }
+    // Font sizes...
+    .t-name {
+      font-size: 30px;
+      u {
+        font-size: 14px;
+      }
+      // $wideTreshold: 1200px;
+      @media (width <= $wideTreshold) {
+        font-size: 24px;
+        u {
+          font-size: 12px;
+        }
+      }
+    }
+    .t-descr {
+      font-size: 20px;
+      line-height: 1.2;
+    }
+    // Carousel navigation
+    .owl-dots {
+      margin-top: 40px;
+      .owl-dot {
+        $size: 15px;
+        span {
+          background-color: var(--primaryColor);
+          width: $size;
+          height: $size;
+          transition: all var(--transitionTimeMs);
+        }
+        &.active {
+          span {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+}

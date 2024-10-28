@@ -1,0 +1,86 @@
+@use '../variables' as *;
+
+#allrecords .uc-CaseTiles {
+  .t-bgimg {
+    position: relative;
+    overflow: hidden;
+  }
+  .Title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    text-align: center;
+    font-family: var(--titleFont);
+    line-height: 1;
+    color: #fff;
+    background-color: var(--primaryColor);
+    text-transform: uppercase;
+    font-size: 40px;
+    padding: 20px;
+  }
+  @media (width <= $smallTreshold) {
+    // Compensate missing bottom padding
+    margin-bottom: 40px;
+  }
+  @media (width > $smallTreshold) {
+    $normalHeight: 340px;
+    .t662__container {
+      display: flex;
+      flex-direction: column;
+      padding: 0;
+      gap: 50px;
+    }
+    .t662__row {
+      height: $normalHeight;
+      display: flex;
+      padding: 0;
+      gap: 50px;
+    }
+    .t662__tile {
+      display: flex;
+      padding: 0;
+    }
+    .t-bgimg {
+      padding: 0;
+      flex: 1;
+    }
+  }
+  @media (width <= $mobileTreshold) {
+    .Title {
+      font-size: 20px;
+      padding: 15px;
+    }
+    @media (width > $smallTreshold) {
+      $mediumHeight: 260px;
+      .t662__row {
+        display: flex;
+        // flex-direction: column;
+        gap: 20px;
+      }
+      .t662__row {
+        height: $mediumHeight;
+      }
+    }
+  }
+  // @media (width <= $smallTreshold) {
+  @media (width <= 500px) {
+    $smaillHeight: 150px;
+    .t662__row {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .t662__tile,
+    .t-bgimg {
+      width: 100%;
+      height: $smaillHeight;
+      overflow: hidden;
+      padding: 0;
+    }
+    .Title {
+      font-size: 15px;
+      padding: 10px;
+    }
+  }
+}

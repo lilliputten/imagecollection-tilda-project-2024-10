@@ -2,6 +2,9 @@ const scrollTreshold = 300;
 
 export function initTopMenu() {
   const navHeaderNode = document.querySelector('.uc-NavHeader');
+  if (!navHeaderNode) {
+    return;
+  }
   document.addEventListener('scroll', checkScroll);
   checkScroll();
   function checkScroll() {

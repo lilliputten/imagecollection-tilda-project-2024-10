@@ -1,0 +1,126 @@
+@use '../variables' as *;
+
+#allrecords .uc-FeaturesGal {
+  // border: 2px dashed green; // DEBUG
+  background-color: transparent !important;
+  .CarouselWrapper {
+    overflow: hidden;
+  }
+  .Carousel {
+    .owl-stage-outer {
+      overflow: visible;
+    }
+    .owl-stage {
+      display: flex;
+      align-items: stretch;
+    }
+    .owl-item {
+      margin: 0 20px !important;
+      display: flex;
+      align-items: stretch;
+      justify-content: space-evenly;
+      // max-width: 900px; // To limit the width: but the positioning will be uncentered then.
+    }
+    .t-item {
+      border-radius: 10px;
+      overflow: hidden;
+      background-color: var(--primaryColor);
+      margin: 0 !important;
+      padding: 60px 50px;
+      padding-bottom: 30px;
+      flex: 1;
+      max-width: none;
+      position: relative;
+    }
+    .owl-item {
+      .t-cell {
+        transition: opacity 1s;
+      }
+      &:not(.active) .t-cell {
+        opacity: 0;
+      }
+      &:not(.active).under .t-cell,
+      &:not(.active):hover .t-cell {
+        opacity: 0.5;
+      }
+    }
+    .t-cell {
+      display: block;
+      &:first-child {
+        // Image cell: don't display
+        display: none;
+      }
+    }
+    .t-name {
+      position: relative;
+      line-height: 1;
+      font-weight: normal;
+      margin-bottom: 20px;
+      u {
+        position: absolute;
+        right: 0;
+        text-decoration: none;
+      }
+      // Font sizes...
+      font-size: 90px;
+      u {
+        font-size: 210px;
+      }
+      // $wideTreshold: 1200px;
+      @media (width <= $wideTreshold) {
+        font-size: 70px;
+        u {
+          font-size: 150px;
+        }
+      }
+      // $mobileTreshold: 980px;
+      @media (width <= $mobileTreshold) {
+        font-size: 40px;
+        u {
+          font-size: 90px;
+        }
+      }
+      // $smallTreshold: 660px;
+      @media (width <= $smallTreshold) {
+        font-size: 25px;
+        u {
+          font-size: 55px;
+        }
+      }
+    }
+    .t-descr {
+      font-size: 24px;
+      line-height: 1.2;
+      // $wideTreshold: 1200px;
+      @media (width <= $wideTreshold) {
+        font-size: 22px;
+      }
+      // $mobileTreshold: 980px;
+      @media (width <= $mobileTreshold) {
+        font-size: 20px;
+      }
+      // $smallTreshold: 660px;
+      @media (width <= $smallTreshold) {
+        font-size: 18px;
+      }
+    }
+    // Carousel navigation
+    .owl-dots {
+      margin-top: 40px;
+      .owl-dot {
+        $size: 15px;
+        span {
+          background-color: var(--primaryColor);
+          width: $size;
+          height: $size;
+          transition: all var(--transitionTimeMs);
+        }
+        &.active {
+          span {
+            width: 60px;
+          }
+        }
+      }
+    }
+  }
+}

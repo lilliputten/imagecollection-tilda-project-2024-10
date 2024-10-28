@@ -1,0 +1,50 @@
+@use '../variables' as *;
+
+#allrecords .uc-SectionTitle {
+  @include activeLink;
+  border-top: 2px solid var(--primaryColor);
+
+  .t-col {
+    // max-width: none;
+    display: flex;
+    justify-content: space-between;
+    @media (width <= $mobileTreshold) {
+      flex-direction: column;
+    }
+    @media (width > $mobileTreshold) {
+      align-items: center;
+    }
+  }
+  .t-descr {
+    line-height: 1;
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 20px;
+      padding: 0;
+      list-style: none;
+      @media (width > $mobileTreshold) {
+        justify-content: flex-end;
+      }
+    }
+    a {
+      display: inline-block;
+      border-radius: 10px;
+      border: 2px solid var(--primaryColor);
+      padding: 6px 20px;
+    }
+  }
+
+  // OLD
+  .t-title {
+    font-size: 68px;
+    line-height: 1;
+    // white-space: normal;
+    @media (width <= $mobileTreshold) {
+      font-size: 44px;
+    }
+    @media (width > $mobileTreshold) {
+      // max-width: 50%;
+    }
+  }
+}

@@ -12,9 +12,13 @@
   }
   .tmenu-mobile {
     background-color: transparent;
+    transition: background var(--animationTimeMs);
   }
   .tmenu-mobile__container {
     border-bottom: 2px solid $NavHeaderBorderColor;
+  }
+  .t228.tmenu-mobile__menucontent_fixed {
+    // background-color: rgba(255 255 255 / 70%) !important;
   }
   // Dynamic (scroll-based) background...
   .tmenu-mobile__container,
@@ -27,6 +31,12 @@
     .t228__maincontainer {
       background-color: rgba(255 255 255 / 80%);
     }
+  }
+  .tmenu-mobile_opened {
+    background-color: #fff;
+  }
+  .t228__centercontainer {
+    padding-bottom: 0;
   }
   // Disable default paddings...
   &,

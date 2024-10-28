@@ -1,0 +1,46 @@
+@use '../variables' as *;
+
+#allrecords .uc-WorkItems {
+  @include activeLink;
+  .t-uptitle {
+    color: var(--primaryColor);
+  }
+  @media (width <= $mobileTreshold) {
+    .t1053__col-wrapper {
+      padding-top: 0;
+      // padding: 20px 0;
+    }
+  }
+  @media (width > $mobileTreshold) {
+    .t-col {
+      @media (width <= 1250px) {
+        margin-right: 0;
+      }
+    }
+    .t1053__col-wrapper {
+      text-align: left;
+      padding: 0;
+    }
+  }
+  // Font sizes...
+  .t-uptitle {
+    font-size: 140px;
+  }
+  .t-name {
+    font-size: 28px;
+  }
+  .t-descr {
+    font-size: 24px;
+  }
+  @media (width <= $wideTreshold) {
+    .t-uptitle {
+      font-size: 120px;
+    }
+    .t-name {
+      font-size: 24px;
+    }
+    .t-descr {
+      font-size: 22px;
+    }
+  }
+}
