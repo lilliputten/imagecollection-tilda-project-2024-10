@@ -1,5 +1,4 @@
 import './Carousel.scss';
-import './DevWarning.scss';
 import './FooterContacts.scss';
 import './FooterCredits.scss';
 import './FooterLogo.scss';

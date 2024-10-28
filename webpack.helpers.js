@@ -50,7 +50,8 @@ function getAssetContent(asset) {
  */
 function removeSourceMaps(content) {
   content = content.replace(/\s*\/.# sourceMappingURL=.*/, '');
-  return content;
+  content = content.replace(/[\r\n]{2,}/gm, '\n');
+  return content.trim();
 }
 
 /**
