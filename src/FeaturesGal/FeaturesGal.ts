@@ -74,6 +74,7 @@ export function initFeaturesGal() {
     target.underItem = underItem;
     if (underItem) {
       underItem.classList.toggle('under', true);
+      // TODO: Update 'under' node after manual switch back or forward
     }
     if (doAutoplay) {
       owl.trigger('stop.owl.autoplay');

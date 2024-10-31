@@ -1,11 +1,11 @@
 {
-  "appVersionHash": "imagecollection-tilda-project-2024-10 v.0.0.5 / 2024.10.28 13:49 +0300",
+  "appVersionHash": "imagecollection-tilda-project-2024-10 v.0.0.6 / 2024.10.31 18:44 +0300",
   "projectName": "imagecollection-tilda-project-2024-10",
-  "timestamp": "2024.10.28 13:49 +0300",
-  "timetag": "241028-1349",
-  "version": "0.0.5",
-  "currentTimeStr": "2024.10.28 13:49 +0300",
-  "currentTimeTag": "241028-1349",
-  "gitCommitHash": "1d3b941",
-  "gitBranch": "7-contact-form"
+  "timestamp": "2024.10.31 18:44 +0300",
+  "timetag": "241031-1844",
+  "version": "0.0.6",
+  "currentTimeStr": "2024.10.31 18:44 +0300",
+  "currentTimeTag": "241031-1844",
+  "gitCommitHash": "16b5073",
+  "gitBranch": "main"
 }
